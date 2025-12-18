@@ -405,9 +405,10 @@ button:hover {
   overflow-x: hidden;
 }
 
+/* Prevent horizontal scroll in dark mode - DO NOT override max-width */
 .theme-dark .container {
-  max-width: 100%;
   overflow-x: hidden;
+  /* max-width is inherited from base .container (1200px) */
 }
 
 /* ========================================
