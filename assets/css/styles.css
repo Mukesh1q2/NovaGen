@@ -1083,6 +1083,16 @@ footer {
   color: var(--brand-primary-light);
 }
 
+/* Fix dark mode breadcrumbs scroll issue */
+.theme-dark .breadcrumbs {
+  overflow: visible;
+}
+
+.theme-dark .breadcrumbs .container {
+  overflow: visible;
+  max-width: 1200px;
+}
+
 /* Utility Classes */
 .text-center {
   text-align: center;
