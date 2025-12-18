@@ -1,0 +1,165 @@
+/* Gallery Dark Mode Fixes */
+/* Improves the appearance of product gallery images in dark theme */
+
+/* Dark Mode Gallery Item Styling */
+.theme-dark .gallery-item {
+  background: var(--card-bg);
+  border: 2px solid rgba(243, 156, 18, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark .gallery-item:hover {
+  border-color: var(--brand-accent);
+  box-shadow: 0 12px 30px rgba(243, 156, 18, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Add padding around images to create separation from dark background */
+.theme-dark .gallery-item img {
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Alternative: Add a subtle inner glow effect */
+.theme-dark .gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(243, 156, 18, 0.3), rgba(23, 58, 138, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-dark .gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* Improve gallery caption in dark mode */
+.theme-dark .gallery-caption {
+  background: linear-gradient(transparent, rgba(26, 26, 46, 0.95));
+}
+
+.theme-dark .gallery-caption h4 {
+  color: var(--brand-accent);
+}
+
+.theme-dark .gallery-caption p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Gallery grid improvements for dark mode */
+.theme-dark .product-gallery {
+  background: transparent;
+}
+
+/* Add subtle glow to gallery section in dark mode */
+.theme-dark .gallery-section {
+  background: linear-gradient(135deg, rgba(22, 33, 62, 0.5), rgba(26, 26, 46, 0.5));
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(243, 156, 18, 0.2);
+}
+
+/* Improve gallery grid spacing in dark mode */
+.theme-dark .product-gallery {
+  gap: 1.5rem;
+}
+
+/* Add focus state for accessibility */
+.theme-dark .gallery-item:focus {
+  outline: 3px solid var(--brand-accent);
+  outline-offset: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .theme-dark .gallery-item img {
+    padding: 6px;
+  }
+  
+  .theme-dark .gallery-section {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .theme-dark .gallery-item img {
+    padding: 7px;
+  }
+  
+  .theme-dark .gallery-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Ensure images maintain aspect ratio */
+.theme-dark .gallery-item img {
+  object-fit: contain; /* Changed from cover to contain to show full image */
+  height: 140px;
+}
+
+/* Add subtle animation on load */
+@keyframes fadeInGallery {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.theme-dark .gallery-item {
+  animation: fadeInGallery 0.5s ease forwards;
+}
+
+/* Stagger animation for gallery items */
+.theme-dark .gallery-item:nth-child(1) { animation-delay: 0.05s; }
+.theme-dark .gallery-item:nth-child(2) { animation-delay: 0.1s; }
+.theme-dark .gallery-item:nth-child(3) { animation-delay: 0.15s; }
+.theme-dark .gallery-item:nth-child(4) { animation-delay: 0.2s; }
+.theme-dark .gallery-item:nth-child(5) { animation-delay: 0.25s; }
+.theme-dark .gallery-item:nth-child(6) { animation-delay: 0.3s; }
+.theme-dark .gallery-item:nth-child(7) { animation-delay: 0.35s; }
+.theme-dark .gallery-item:nth-child(8) { animation-delay: 0.4s; }
+.theme-dark .gallery-item:nth-child(9) { animation-delay: 0.45s; }
+.theme-dark .gallery-item:nth-child(10) { animation-delay: 0.5s; }
+
+/* Improve hover state transition */
+.theme-dark .gallery-item {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-dark .gallery-item:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Add loading state styling */
+.theme-dark .gallery-item.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(22, 33, 62, 0.8) 0%,
+    rgba(243, 156, 18, 0.1) 50%,
+    rgba(22, 33, 62, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -1,0 +1,171 @@
+/**
+ * Design Tokens - NovaGen Automation Website
+ * 
+ * This file contains all CSS custom properties (variables) that define
+ * the design system foundation including colors, spacing, typography,
+ * shadows, and border radius values.
+ */
+
+:root {
+   /* ============================================
+     BRAND COLORS
+     ============================================ */
+   --brand-primary: #D68910;
+   /* Orange - Primary brand color (WCAG AA compliant) */
+   --brand-primary-light: #F39C12;
+   /* Lighter orange for dark backgrounds */
+   --brand-secondary: #2C3E50;
+   /* Dark Blue - Secondary brand color */
+   --brand-accent: #173A8A;
+   /* Brand Blue - Main accent color */
+   --brand-accent-accessible: #2C7DB8;
+   /* Accessible blue for text/links */
+   --brand-accent-light: #3498DB;
+   /* Lighter blue for dark backgrounds */
+
+   /* ============================================
+     SEMANTIC COLORS - LIGHT MODE
+     ============================================ */
+   /* Backgrounds */
+   --color-bg-primary: #FFFFFF;
+   --color-bg-secondary: #F8F9FA;
+   --color-bg-hero: #173A8A;
+   --color-bg-cta: #173A8A;
+
+   /* Text Colors */
+   --color-text-primary: #2C3E50;
+   --color-text-secondary: #767676;
+   --color-text-on-dark: #FFFFFF;
+   --color-text-accent: #D68910;
+
+   /* Borders */
+   --color-border: #949494;
+   --color-border-accent: #D68910;
+
+   /* ============================================
+     SPACING SCALE (8px base)
+     ============================================ */
+   --space-xs: 0.5rem;
+   /* 8px */
+   --space-sm: 1rem;
+   /* 16px */
+   --space-md: 1.5rem;
+   /* 24px */
+   --space-lg: 2rem;
+   /* 32px */
+   --space-xl: 3rem;
+   /* 48px */
+   --space-2xl: 4rem;
+   /* 64px */
+   --space-3xl: 6rem;
+   /* 96px */
+
+   /* Component-Specific Spacing */
+   --hero-padding-y: var(--space-3xl);
+   --hero-gap: var(--space-md);
+   --card-padding: var(--space-lg);
+   --card-gap: var(--space-md);
+   --button-padding-y: var(--space-sm);
+   --button-padding-x: var(--space-lg);
+   --section-padding-y: var(--space-2xl);
+
+   /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+   /* Font Families */
+   --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+   --font-heading: 'Outfit', sans-serif;
+
+   /* Font Sizes */
+   --font-size-xs: 0.75rem;
+   /* 12px */
+   --font-size-sm: 0.875rem;
+   /* 14px */
+   --font-size-base: 1rem;
+   /* 16px */
+   --font-size-lg: 1.125rem;
+   /* 18px */
+   --font-size-xl: 1.25rem;
+   /* 20px */
+   --font-size-2xl: 1.5rem;
+   /* 24px */
+   --font-size-3xl: 2rem;
+   /* 32px */
+   --font-size-4xl: 2.5rem;
+   /* 40px */
+   --font-size-5xl: 3rem;
+   /* 48px */
+
+   /* Font Weights */
+   --font-weight-normal: 400;
+   --font-weight-medium: 500;
+   --font-weight-semibold: 600;
+   --font-weight-bold: 700;
+
+   /* Line Heights */
+   --line-height-tight: 1.2;
+   --line-height-normal: 1.5;
+   --line-height-relaxed: 1.75;
+
+   /* Heading Sizes */
+   --h1-size: var(--font-size-4xl);
+   --h2-size: var(--font-size-3xl);
+   --h3-size: var(--font-size-2xl);
+   --h4-size: var(--font-size-xl);
+   --h5-size: var(--font-size-lg);
+   --h6-size: var(--font-size-base);
+
+   /* ============================================
+     SHADOWS
+     ============================================ */
+   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+   --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.18);
+
+   /* ============================================
+     BORDER RADIUS
+     ============================================ */
+   --radius-sm: 0.25rem;
+   /* 4px */
+   --radius-md: 0.5rem;
+   /* 8px */
+   --radius-lg: 0.75rem;
+   /* 12px */
+   --radius-xl: 1rem;
+   /* 16px */
+   --radius-full: 9999px;
+   /* Fully rounded */
+
+   /* Component-Specific Radius */
+   --button-radius: var(--radius-md);
+   --card-radius: var(--radius-lg);
+   --badge-radius: var(--radius-full);
+}
+
+/* ============================================
+   DARK MODE THEME
+   ============================================ */
+.theme-dark {
+   /* Backgrounds */
+   --color-bg-primary: #1A1A2E;
+   --color-bg-secondary: #16213E;
+   --color-bg-hero: #16213E;
+   --color-bg-cta: #16213E;
+
+   /* Text Colors */
+   --color-text-primary: #FFFFFF;
+   --color-text-secondary: #E0E0E0;
+   --color-text-on-dark: #FFFFFF;
+   --color-text-accent: #F39C12;
+
+   /* Borders - Increased opacity for better contrast */
+   --color-border: rgba(243, 156, 18, 0.4);
+   --color-border-accent: #F39C12;
+
+   /* Shadows - Enhanced for dark mode */
+   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+   --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.6);
+}

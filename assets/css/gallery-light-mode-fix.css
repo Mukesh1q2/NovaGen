@@ -1,0 +1,289 @@
+/* Gallery Light Mode Enhancements */
+/* Matches the dark mode gallery styling for consistency */
+
+/* Light Mode Gallery Item Styling */
+.gallery-item {
+  background: var(--card-bg);
+  border: 2px solid var(--color-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: 0 12px 30px rgba(214, 137, 16, 0.25);
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Add padding around images to create separation and consistency with dark mode */
+.gallery-item img {
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  object-fit: contain;
+  height: 140px;
+}
+
+/* Add a subtle border effect on hover */
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(214, 137, 16, 0.3), rgba(44, 125, 184, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* Improve gallery caption in light mode */
+.gallery-caption {
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.98));
+  border-top: 1px solid var(--color-border);
+}
+
+.gallery-caption h4 {
+  color: var(--brand-accent);
+  font-weight: 600;
+}
+
+.gallery-caption p {
+  color: var(--color-text-secondary);
+}
+
+/* Gallery grid improvements for light mode */
+.product-gallery {
+  background: transparent;
+  gap: 1.5rem;
+}
+
+/* Add subtle background to gallery section in light mode */
+.gallery-section {
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.8), rgba(255, 255, 255, 0.9));
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+}
+
+/* Add focus state for accessibility */
+.gallery-item:focus {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .gallery-item img {
+    padding: 6px;
+  }
+  
+  .gallery-section {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery-item img {
+    padding: 7px;
+  }
+  
+  .gallery-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Add subtle animation on load */
+@keyframes fadeInGallery {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-item {
+  animation: fadeInGallery 0.5s ease forwards;
+}
+
+/* Stagger animation for gallery items */
+.gallery-item:nth-child(1) { animation-delay: 0.05s; }
+.gallery-item:nth-child(2) { animation-delay: 0.1s; }
+.gallery-item:nth-child(3) { animation-delay: 0.15s; }
+.gallery-item:nth-child(4) { animation-delay: 0.2s; }
+.gallery-item:nth-child(5) { animation-delay: 0.25s; }
+.gallery-item:nth-child(6) { animation-delay: 0.3s; }
+.gallery-item:nth-child(7) { animation-delay: 0.35s; }
+.gallery-item:nth-child(8) { animation-delay: 0.4s; }
+.gallery-item:nth-child(9) { animation-delay: 0.45s; }
+.gallery-item:nth-child(10) { animation-delay: 0.5s; }
+
+/* Add loading state styling */
+.gallery-item.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(248, 249, 250, 0.8) 0%,
+    rgba(214, 137, 16, 0.1) 50%,
+    rgba(248, 249, 250, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Gallery placeholder styling for light mode */
+.gallery-placeholder {
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.9), rgba(255, 255, 255, 0.95));
+  border: 2px dashed var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.gallery-placeholder:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.9));
+  border-color: var(--color-border-accent);
+  box-shadow: 0 8px 20px rgba(214, 137, 16, 0.15);
+}
+
+.placeholder-icon {
+  color: var(--brand-accent);
+  opacity: 0.7;
+}
+
+.gallery-placeholder h4 {
+  color: var(--brand-accent);
+  font-weight: 600;
+}
+
+.gallery-placeholder p {
+  color: var(--color-text-secondary);
+}
+
+/* Ensure consistent styling across all gallery types */
+.gallery-grid .gallery-item,
+.product-gallery .gallery-item,
+.section-gallery .gallery-item {
+  background: var(--card-bg);
+  border: 2px solid var(--color-border);
+}
+
+.gallery-grid .gallery-item:hover,
+.product-gallery .gallery-item:hover,
+.section-gallery .gallery-item:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: 0 12px 30px rgba(214, 137, 16, 0.25);
+}
+
+/* Brand-specific gallery enhancements */
+.siemens-gallery .gallery-item:hover {
+  border-color: var(--siemens-blue);
+  box-shadow: 0 12px 30px rgba(0, 153, 153, 0.25);
+}
+
+.mitsubishi-gallery .gallery-item:hover {
+  border-color: var(--mitsubishi-purple);
+  box-shadow: 0 12px 30px rgba(142, 36, 170, 0.25);
+}
+
+.delta-gallery .gallery-item:hover {
+  border-color: var(--delta-green);
+  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.25);
+}
+
+.yaskawa-gallery .gallery-item:hover {
+  border-color: var(--yaskawa-orange);
+  box-shadow: 0 12px 30px rgba(255, 152, 0, 0.25);
+}
+
+.omron-gallery .gallery-item:hover {
+  border-color: var(--omron-red);
+  box-shadow: 0 12px 30px rgba(211, 47, 47, 0.25);
+}
+
+/* Improve image quality and presentation */
+.gallery-item img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Add subtle shadow to images for depth */
+.gallery-item img:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Gallery instructions card styling */
+.instruction-card {
+  background: var(--card-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.instruction-card h4 {
+  color: var(--brand-accent);
+}
+
+.instruction-card li strong {
+  color: var(--brand-primary);
+}
+
+/* Gallery section header improvements */
+.gallery-section .section-title {
+  color: var(--brand-accent);
+}
+
+.gallery-section .section-subtitle {
+  color: var(--color-text-secondary);
+}
+
+/* Brand badge in gallery */
+.brand-badge {
+  background: var(--card-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.brand-badge h3 {
+  color: var(--brand-accent);
+}
+
+/* Ensure proper contrast for all text elements */
+.gallery-item * {
+  color: var(--color-text-primary);
+}
+
+.gallery-caption * {
+  color: inherit;
+}
+
+/* Print styles */
+@media print {
+  .gallery-item {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+  
+  .gallery-item img {
+    padding: 4px;
+  }
+}

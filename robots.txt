@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://novagenautomation.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Disallow common sensitive paths (if any backend is added later)
+# Disallow: /admin/
+# Disallow: /api/

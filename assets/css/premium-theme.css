@@ -1,0 +1,151 @@
+/**
+ * Premium Theme Enhancements - NovaGen Automation
+ * High-end visual effects, transitions, and modern aesthetics.
+ */
+
+/* 1. Glassmorphism Header */
+header {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-dark header {
+    background: rgba(26, 26, 46, 0.8) !important;
+    border-bottom: 1px solid rgba(243, 156, 18, 0.1);
+}
+
+/* 2. Advanced Mesh Gradients for Hero Sections */
+.hero,
+.hero-products,
+.cta-section {
+    background: radial-gradient(at 0% 0%, rgba(23, 58, 138, 0.9) 0, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(214, 137, 16, 0.15) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(13, 31, 92, 1) 0, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(23, 58, 138, 0.8) 0, transparent 50%),
+        var(--brand-accent) !important;
+    background-size: 200% 200% !important;
+    animation: meshGradient 15s ease infinite !important;
+    position: relative;
+}
+
+@keyframes meshGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Technical Overlay Grid */
+.hero::after,
+.hero-products::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 3. Premium Card Staging */
+.card,
+.product-card,
+.category-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.card:hover,
+.product-card:hover,
+.category-card:hover {
+    transform: translateY(-12px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+    border-color: var(--brand-primary) !important;
+}
+
+.theme-dark .card,
+.theme-dark .product-card {
+    background: rgba(22, 33, 62, 0.6) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(243, 156, 18, 0.1) !important;
+}
+
+/* 4. Interactive Button Glow */
+.btn-primary,
+.hero .btn-primary {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(214, 137, 16, 0.4) !important;
+    letter-spacing: 0.5px;
+}
+
+/* 5. Typography Hierarchy Fine-tuning */
+h1 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+}
+
+h2,
+h3,
+h4 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+body {
+    font-family: 'Inter', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+}
+
+/* 6. Logo Proportions & Polish */
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 140px !important;
+    }
+}
+
+/* Smooth Entrance Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

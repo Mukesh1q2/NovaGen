@@ -1,0 +1,277 @@
+/* Composite Components - NovaGen Automation Systems & Solution */
+/* Hero sections, CTA sections, and other composite UI patterns */
+
+/* ============================================
+   HERO SECTION COMPONENT
+   ============================================ */
+
+.hero {
+  position: relative;
+  background: var(--color-bg-hero);
+  padding: var(--hero-padding-y) 0;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-gap);
+  align-items: center;
+}
+
+/* Hero Text Elements */
+.hero-title {
+  font-size: var(--h1-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-on-dark);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.hero-title .text-accent {
+  color: var(--brand-primary);
+  display: inline;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-on-dark);
+  opacity: 0.9;
+  line-height: var(--line-height-normal);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-on-dark);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.breadcrumb a {
+  color: var(--color-text-on-dark);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Hero Actions */
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+/* Hero Features */
+.hero-features {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
+}
+
+.feature-badge {
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--badge-radius);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-on-dark);
+  white-space: nowrap;
+}
+
+/* ============================================
+   DARK MODE HERO STYLES
+   ============================================ */
+
+.theme-dark .hero {
+  background: var(--color-bg-hero);
+}
+
+.theme-dark .hero-title,
+.theme-dark .hero-subtitle,
+.theme-dark .breadcrumb {
+  color: var(--color-text-on-dark);
+}
+
+.theme-dark .hero-title .text-accent {
+  color: var(--brand-primary-light);
+}
+
+.theme-dark .breadcrumb a {
+  color: var(--color-text-on-dark);
+}
+
+.theme-dark .feature-badge {
+  background: rgba(243, 156, 18, 0.2);
+  border-color: rgba(243, 156, 18, 0.4);
+  color: var(--color-text-on-dark);
+}
+
+/* Responsive Hero Styles */
+@media (max-width: 767px) {
+  .hero {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .hero-content {
+    padding: 0 var(--space-sm);
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-sm);
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+  }
+  
+  .hero-features {
+    gap: var(--space-sm);
+  }
+  
+  .feature-badge {
+    font-size: var(--font-size-xs);
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ============================================
+   CTA SECTION COMPONENT
+   ============================================ */
+
+.cta-section {
+  background: var(--color-bg-cta);
+  padding: var(--section-padding-y) var(--space-lg);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.cta-title {
+  font-size: var(--h2-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-on-dark);
+  margin: 0;
+  line-height: var(--line-height-tight);
+}
+
+.cta-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-on-dark);
+  opacity: 0.9;
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   DARK MODE CTA STYLES
+   ============================================ */
+
+.theme-dark .cta-section {
+  background: var(--color-bg-cta);
+  border-top: 1px solid var(--color-border);
+}
+
+.theme-dark .cta-title,
+.theme-dark .cta-description {
+  color: var(--color-text-on-dark);
+}
+
+/* Responsive CTA Styles */
+@media (max-width: 767px) {
+  .cta-section {
+    padding: var(--space-xl) var(--space-sm);
+  }
+  
+  .cta-content {
+    gap: var(--space-md);
+  }
+  
+  .cta-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .cta-description {
+    font-size: var(--font-size-base);
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-sm);
+  }
+  
+  .cta-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cta-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .cta-description {
+    font-size: var(--font-size-base);
+  }
+}

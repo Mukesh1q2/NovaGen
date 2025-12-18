@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Test files
+*.test.html
+*-test.html
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Documentation that shouldn't be deployed
+*.docx
+*.zip
+*.pdf
+PRODUCTS_ROADMAP.*
+Comments.pdf
+
+# Backup files
+*.bak
+*.backup

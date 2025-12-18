@@ -1,0 +1,1152 @@
+/* =================================================================
+   Modern CSS Design System - NovaGen Automation
+   Created: November 2025
+   ================================================================= */
+
+/* CSS Variables - Design System Core */
+:root {
+  /* Brand Colors */
+  --brand-blue: #173a8a;
+  --brand-accent: #f39c12;
+  --brand-blue-light: #2563eb;
+  --brand-blue-dark: #1e3a8a;
+  --brand-accent-light: #fbbf24;
+  --brand-accent-dark: #d97706;
+
+  /* Neutral Colors */
+  --neutral-white: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+
+  /* Typography Scale */
+  --font-size-small: 13px;
+  --font-size-body: 16px;
+  --font-size-h3: 20px;
+  --font-size-h2: 26px;
+  --font-size-h1: 34px;
+
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing Scale (16px base rhythm) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Container & Layout */
+  --container-padding: 24px;
+  --container-max-width: 1200px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* Brand-specific colors */
+  --siemens-blue: #009999;
+  --mitsubishi-purple: #6b46c1;
+  --delta-green: #10b981;
+  --yaskawa-orange: #f59e0b;
+  --omron-red: #dc2626;
+  --control-panel-teal: #0d9488;
+  --customized-pink: #ec4899;
+}
+
+/* =================================================================
+   Typography System
+   ================================================================= */
+
+/* Typography Reset & Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--neutral-800);
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-md) 0;
+  color: var(--neutral-900);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-sm);
+}
+
+h4, h5, h6 {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-sm);
+}
+
+/* Body Text & Utilities */
+p {
+  margin: 0 0 var(--space-md) 0;
+  line-height: var(--line-height-normal);
+}
+
+.small {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+/* Links */
+a {
+  color: var(--brand-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--brand-blue-dark);
+  text-decoration: underline;
+}
+
+/* =================================================================
+   Layout & Container System
+   ================================================================= */
+
+/* Container */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+/* Responsive Grid Columns */
+.grid-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Mobile First: 1 column by default */
+.products-grid,
+.detail-content,
+.series-grid,
+.gallery-grid,
+.types-grid,
+.strengths-grid,
+.features-grid,
+.advantages-grid,
+.industry-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+/* Tablet: 2 columns ≥760px */
+@media (min-width: 760px) {
+  .products-grid,
+  .detail-content,
+  .series-grid,
+  .gallery-grid,
+  .types-grid,
+  .strengths-grid,
+  .features-grid,
+  .advantages-grid,
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+/* Desktop: 3 columns ≥1100px */
+@media (min-width: 1100px) {
+  .products-grid,
+  .detail-content,
+  .series-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    padding: 0 var(--space-xl);
+  }
+}
+
+/* =================================================================
+   Spacing & Vertical Rhythm System
+   ================================================================= */
+
+/* Vertical Rhythm (16px base) */
+section {
+  padding: var(--space-3xl) 0;
+}
+
+.section-intro,
+.section-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.detail-main {
+  margin-bottom: var(--space-xl);
+}
+
+/* Margin Utilities */
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+
+/* Padding Utilities */
+.p-xs { padding: var(--space-xs); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+
+.px-sm { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+.px-md { padding-left: var(--space-md); padding-right: var(--space-md); }
+.px-lg { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+
+.py-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+.py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+.py-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+
+/* =================================================================
+   Card Component System
+   ================================================================= */
+
+/* Base Card */
+.card {
+  background: var(--neutral-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--neutral-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Product Cards */
+.product-card {
+  background: var(--neutral-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-xl);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--neutral-200);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-accent));
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.product-card .card-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.product-card .brand-title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-900);
+  margin: var(--space-md) 0 var(--space-xs) 0;
+}
+
+.product-card .category-badge {
+  background: var(--brand-blue);
+  color: var(--neutral-white);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+}
+
+.product-card .card-content {
+  flex-grow: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.product-card .brand-description {
+  color: var(--neutral-600);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--space-lg);
+}
+
+.product-card .card-actions {
+  margin-top: auto;
+}
+
+/* Brand-specific card colors */
+.siemens-card::before { background: var(--siemens-blue); }
+.mitsubishi-card::before { background: var(--mitsubishi-purple); }
+.delta-card::before { background: var(--delta-green); }
+.yaskawa-card::before { background: var(--yaskawa-orange); }
+.omron-card::before { background: var(--omron-red); }
+.control-panel-card::before { background: var(--control-panel-teal); }
+.customized-card::before { background: var(--customized-pink); }
+
+/* Sidebar Cards */
+.sidebar-card {
+  background: var(--neutral-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+  border: 1px solid var(--neutral-200);
+  margin-bottom: var(--space-lg);
+}
+
+.sidebar-card h3 {
+  color: var(--neutral-900);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--brand-blue);
+}
+
+/* Detail Cards */
+.detail-card {
+  background: var(--neutral-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xl);
+  border: 1px solid var(--neutral-200);
+  margin-bottom: var(--space-lg);
+}
+
+.detail-card h3 {
+  color: var(--neutral-900);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+}
+
+/* =================================================================
+   Button Component System
+   ================================================================= */
+
+/* Base Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Button Sizes */
+.btn-small {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-small);
+}
+
+.btn-large {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+}
+
+.btn-block {
+  width: 100%;
+  display: flex;
+}
+
+/* Button Variants */
+.btn-primary {
+  background: var(--brand-blue);
+  color: var(--neutral-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--brand-blue-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--neutral-100);
+  color: var(--neutral-800);
+  border: 1px solid var(--neutral-300);
+}
+
+.btn-secondary:hover {
+  background: var(--neutral-200);
+  border-color: var(--neutral-400);
+}
+
+.btn-accent {
+  background: var(--brand-accent);
+  color: var(--neutral-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-accent:hover {
+  background: var(--brand-accent-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--brand-blue);
+  border: 2px solid var(--brand-blue);
+}
+
+.btn-outline:hover {
+  background: var(--brand-blue);
+  color: var(--neutral-white);
+}
+
+/* Button Icons */
+.btn-icon {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+
+/* =================================================================
+   Sidebar Component System
+   ================================================================= */
+
+/* Detail Layout with Sidebar */
+.detail-content {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.detail-main {
+  /* Takes available space */
+}
+
+.detail-sidebar {
+  /* Fixed width sidebar */
+  min-width: 280px;
+}
+
+@media (min-width: 1024px) {
+  .detail-content {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
+/* Sidebar Lists */
+.excellence-list,
+.advantages-list,
+.capabilities-list,
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.excellence-item,
+.advantage-list-item,
+.capability-item,
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.excellence-item:hover,
+.advantage-list-item:hover,
+.capability-item:hover,
+.benefit-item:hover {
+  background: var(--neutral-50);
+}
+
+.excellence-icon,
+.advantage-icon,
+.capability-icon,
+.benefit-icon {
+  font-size: var(--font-size-body);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.excellence-item strong,
+.advantage-list-item strong,
+.benefit-item strong {
+  color: var(--neutral-900);
+  font-weight: var(--font-weight-semibold);
+}
+
+.excellence-item span,
+.advantage-list-item span,
+.capability-item span,
+.benefit-item span {
+  color: var(--neutral-600);
+  font-size: var(--font-size-small);
+}
+
+/* Sidebar Actions */
+.sidebar-action {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--neutral-200);
+}
+
+/* =================================================================
+   Section & Layout Components
+   ================================================================= */
+
+/* Section Headers */
+.section-intro,
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-2xl) auto;
+}
+
+.section-title {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-900);
+  margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--neutral-600);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* Section Badges */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--brand-blue);
+  color: var(--neutral-white);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-md);
+}
+
+.badge-icon {
+  font-size: 1.1em;
+}
+
+/* Brand Intro */
+.brand-intro {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+  margin-bottom: var(--space-2xl);
+  padding: var(--space-xl);
+  background: var(--neutral-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--neutral-200);
+}
+
+@media (min-width: 768px) {
+  .brand-intro {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.intro-content h3 {
+  color: var(--neutral-900);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+}
+
+.intro-content p {
+  color: var(--neutral-700);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-md);
+}
+
+.intro-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.intro-feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--neutral-700);
+}
+
+.intro-feature .feature-icon {
+  font-size: 1.1em;
+}
+
+.intro-image {
+  text-align: center;
+}
+
+.brand-hero-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.image-caption {
+  font-size: var(--font-size-small);
+  color: var(--neutral-600);
+  margin-top: var(--space-sm);
+  font-style: italic;
+}
+
+/* =================================================================
+   Grid & List Components
+   ================================================================= */
+
+/* Product Highlights */
+.product-highlights {
+  margin: var(--space-lg) 0;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.highlight-item:hover {
+  background: var(--neutral-50);
+}
+
+.highlight-icon {
+  font-size: 1em;
+  width: 20px;
+  text-align: center;
+}
+
+.brand-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--neutral-200);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--brand-blue);
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  font-size: var(--font-size-small);
+  color: var(--neutral-600);
+  margin-top: var(--space-xs);
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product-category {
+  background: var(--neutral-50);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--neutral-200);
+}
+
+.product-category h4 {
+  color: var(--neutral-900);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.product-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-category li {
+  padding: var(--space-xs) 0;
+  color: var(--neutral-700);
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+.product-category li:last-child {
+  border-bottom: none;
+}
+
+/* Series Cards */
+.series-card {
+  background: var(--neutral-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--neutral-200);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.series-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.series-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.series-info {
+  padding: var(--space-lg);
+}
+
+.series-info h4 {
+  color: var(--neutral-900);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-sm);
+}
+
+.series-info p {
+  color: var(--neutral-600);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--space-md);
+}
+
+.series-tag {
+  background: var(--brand-accent);
+  color: var(--neutral-white);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* =================================================================
+   Brand-specific Styling
+   ================================================================= */
+
+/* Brand Colors */
+.siemens-color { color: var(--siemens-blue); }
+.mitsubishi-color { color: var(--mitsubishi-purple); }
+.delta-color { color: var(--delta-green); }
+.yaskawa-color { color: var(--yaskawa-orange); }
+.omron-color { color: var(--omron-red); }
+.control-panel-color { color: var(--control-panel-teal); }
+.customized-color { color: var(--customized-pink); }
+
+/* Brand Backgrounds */
+.siemens-bg { background-color: var(--siemens-blue); }
+.mitsubishi-bg { background-color: var(--mitsubishi-purple); }
+.delta-bg { background-color: var(--delta-green); }
+.yaskawa-bg { background-color: var(--yaskawa-orange); }
+.omron-bg { background-color: var(--omron-red); }
+.control-panel-bg { background-color: var(--control-panel-teal); }
+.customized-bg { background-color: var(--customized-pink); }
+
+/* =================================================================
+   Utility Classes
+   ================================================================= */
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Text Colors */
+.text-primary { color: var(--brand-blue); }
+.text-accent { color: var(--brand-accent); }
+.text-muted { color: var(--neutral-600); }
+.text-dark { color: var(--neutral-900); }
+
+/* Background Colors */
+.bg-primary { background-color: var(--brand-blue); }
+.bg-accent { background-color: var(--brand-accent); }
+.bg-light { background-color: var(--neutral-50); }
+.bg-white { background-color: var(--neutral-white); }
+
+/* Display */
+.hidden { display: none; }
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.flex { display: flex; }
+.grid { display: grid; }
+
+/* Flexbox Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+/* Border Radius */
+.rounded { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+
+/* Shadows */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+/* Transitions */
+.transition { transition: all var(--transition-normal); }
+.transition-fast { transition: all var(--transition-fast); }
+.transition-slow { transition: all var(--transition-slow); }
+
+/* Hover Effects */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* =================================================================
+   Responsive Utilities
+   ================================================================= */
+
+/* Mobile First Approach */
+/* All styles above are mobile-first by default */
+
+/* Tablet Styles (≥760px) */
+@media (min-width: 760px) {
+  .md\:block { display: block; }
+  .md\:hidden { display: none; }
+  .md\:flex { display: flex; }
+  .md\:grid { display: grid; }
+  
+  .md\:text-left { text-align: left; }
+  .md\:text-center { text-align: center; }
+  .md\:text-right { text-align: right; }
+}
+
+/* Desktop Styles (≥1100px) */
+@media (min-width: 1100px) {
+  .lg\:block { display: block; }
+  .lg\:hidden { display: none; }
+  .lg\:flex { display: flex; }
+  .lg\:grid { display: grid; }
+  
+  .lg\:text-left { text-align: left; }
+  .lg\:text-center { text-align: center; }
+  .lg\:text-right { text-align: right; }
+}
+
+/* =================================================================
+   Animation & Motion
+   ================================================================= */
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Slide In Animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+/* Animation Delays */
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =================================================================
+   Print Styles
+   ================================================================= */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+  
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+  
+  .card,
+  .product-card,
+  .detail-card,
+  .sidebar-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+}
+
+/* =================================================================
+   Accessibility Enhancements
+   ================================================================= */
+
+/* Focus States */
+.btn:focus,
+a:focus {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --neutral-200: #000;
+    --neutral-600: #000;
+    --neutral-700: #000;
+  }
+  
+  .card,
+  .product-card,
+  .detail-card {
+    border-width: 2px;
+  }
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--brand-blue);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-to-content:focus {
+  top: 6px;
+}
+
+/* =================================================================
+   End of Modern CSS Design System
+   ================================================================= */
