@@ -723,3 +723,45 @@ button:hover {
 }
 
 /* End of Responsive Breakpoint Validation */
+
+/* ========================================
+   DARK MODE CRITICAL FIXES
+   ======================================== */
+
+/* Fix dropdown causing page scroll in dark mode */
+.theme-dark header {
+  overflow: visible;
+}
+
+.theme-dark .dropdown-content {
+  position: absolute;
+  overflow: visible;
+}
+
+/* Ensure dark mode container matches light mode EXACTLY */
+.theme-dark .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Force section containers to be same width in both themes */
+.theme-dark section .container,
+.theme-dark main .container,
+.theme-dark footer .container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure cards and rows don't expand beyond container */
+.theme-dark .card-grid,
+.theme-dark .row {
+  max-width: 100%;
+}
+
+/* Fix header container in dark mode to prevent overflow */
+.theme-dark header .container {
+  max-width: 1200px;
+  overflow: visible;
+}
